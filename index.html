@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWR Submission Verifier</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>GWR Submission Verifier</h2>
+        <p>Please select your CSV response file to begin.</p>
+        <input type="file" id="csv-uploader" accept=".csv">
+    </div>
+
+    <main class="verifier-container hidden">
+        <header class="header">
+            <div class="header-main">
+                <div>
+                    <h1>Site: <span id="site-name"></span></h1>
+                    <h2>Maths Circle code: <span id="circle-code"></span></h2>
+                </div>
+                <div class="navigation">
+                    <span id="site-counter">Site 0/0</span>
+                    <button id="export-btn">Export CSV</button>
+                    <button id="prev-btn">Prev</button>
+                    <button id="next-btn">Next</button>
+                </div>
+            </div>
+            <div class="status-container">
+                <strong>Status:</strong>
+                <label>
+                    <input type="radio" name="status" id="status-needs-reviewing" value="Needs Reviewing">
+                    Needs Reviewing
+                </label>
+                <label>
+                    <input type="radio" name="status" id="status-approved" value="Approved">
+                    Approved
+                </label>
+            </div>
+        </header>
+
+        <section class="image-grid">
+            <div class="image-card"> <img id="image-1" src="" alt="Submission Image 1"> <div class="image-info"> <a id="link-1" href="#" target="_blank">Link to image</a> <p>Timestamp: <span id="timestamp-1"></span></p> <label><input type="checkbox" id="image1-check"> Within acceptable window</label> </div> </div>
+            <div class="image-card"> <img id="image-2" src="" alt="Submission Image 2"> <div class="image-info"> <a id="link-2" href="#" target="_blank">Link to image</a> <p>Timestamp: <span id="timestamp-2"></span></p> </div> </div>
+            <div class="image-card"> <img id="image-3" src="" alt="Submission Image 3"> <div class="image-info"> <a id="link-3" href="#" target="_blank">Link to image</a> <p>Timestamp: <span id="timestamp-3"></span></p> </div> </div>
+            <div class="image-card"> <img id="image-4" src="" alt="Submission Image 4"> <div class="image-info"> <a id="link-4" href="#" target="_blank">Link to image</a> <p>Timestamp: <span id="timestamp-4"></span></p> <label><input type="checkbox" id="image4-check"> More than 30 mins?</label> </div> </div>
+        </section>
+
+        <footer class="footer-details">
+            <div class="detail-item"> <label>Number of stewards: <input type="number" id="stewards-count"></label> <label><input type="checkbox" id="ratio-check"> More than 1 per 50?</label> </div>
+            <div class="detail-item"> <label>Total number of participants for duration: <input type="number" id="participants-count"></label> <label><input type="checkbox" id="participant-check"> More than 15?</label> </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
